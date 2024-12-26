@@ -7,6 +7,17 @@
 
 This project demonstrates two distinct NFT implementations using Solidity: BasicNft and MoodNft. It highlights the creation, minting, and management of ERC721 tokens, including dynamic metadata and on-chain storage capabilities.
 
+1. An IPFS Hosted NFT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. An SVG NFT (Hosted 100% on-chain) 
+
+
+<p align="left">
+<img src="./images/dogNft/pug.png" width="225" alt="NFT Pug">
+<img src="./images/dynamicNft/happy.svg" width="225" alt="NFT Happy">
+<img src="./images/dynamicNft/sad.svg" width="225" alt="NFT Frown">
+</p>
+
+
+
 ### Key Objectives:
 
 - **ERC721 Implementation:** Create fully compliant ERC721 tokens with advanced features.  
