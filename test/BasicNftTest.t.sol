@@ -23,23 +23,13 @@ contract BasicNftTest is Test {
     function testNameIsCorrect() public view {
         // Using `assertEq()` for string comparison (Foundry's built-in helper)
         // `assertEq()` can compare strings directly because it internally uses `keccak256` hashing for comparison.
-        assertEq(
-            basicNft.name(),
-            "Dogie",
-            "The name of the token should be 'Dogie'"
-        );
+        assertEq(basicNft.name(), "Dogie", "The name of the token should be 'Dogie'");
 
         // Using `assert()` for string comparison (Solidity built-in)
         // `assert()` cannot compare `string` values directly, so we use `keccak256` to hash the strings and then compare their hashes.
         // This method is necessary because Solidity does not allow direct `string` comparison in memory.
-        assert(
-            keccak256(abi.encodePacked(basicNft.name())) ==
-                keccak256(abi.encodePacked((NFT_NAME)))
-        );
-        assert(
-            keccak256(abi.encodePacked(basicNft.symbol())) ==
-                keccak256(abi.encodePacked((NFT_SYMBOL)))
-        );
+        assert(keccak256(abi.encodePacked(basicNft.name())) == keccak256(abi.encodePacked((NFT_NAME))));
+        assert(keccak256(abi.encodePacked(basicNft.symbol())) == keccak256(abi.encodePacked((NFT_SYMBOL))));
     }
 
     function testCanMintAndHaveABalance() public {
@@ -53,9 +43,6 @@ contract BasicNftTest is Test {
         vm.prank(USER);
         basicNft.mintNft(PUG_URI);
 
-        assert(
-            keccak256(abi.encodePacked(basicNft.tokenURI(0))) ==
-                keccak256(abi.encodePacked(PUG_URI))
-        );
+        assert(keccak256(abi.encodePacked(basicNft.tokenURI(0))) == keccak256(abi.encodePacked(PUG_URI)));
     }
 }

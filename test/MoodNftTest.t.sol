@@ -29,14 +29,8 @@ contract MoodNftTest is Test {
     }
 
     function testInitializedCorrectly() public view {
-        assert(
-            keccak256(abi.encodePacked(moodNft.name())) ==
-                keccak256(abi.encodePacked((NFT_NAME)))
-        );
-        assert(
-            keccak256(abi.encodePacked(moodNft.symbol())) ==
-                keccak256(abi.encodePacked((NFT_SYMBOL)))
-        );
+        assert(keccak256(abi.encodePacked(moodNft.name())) == keccak256(abi.encodePacked((NFT_NAME))));
+        assert(keccak256(abi.encodePacked(moodNft.symbol())) == keccak256(abi.encodePacked((NFT_SYMBOL))));
     }
 
     function testCanMintAndHaveABalance() public {
@@ -50,10 +44,7 @@ contract MoodNftTest is Test {
         vm.prank(USER);
         moodNft.mintNft();
 
-        assert(
-            keccak256(abi.encodePacked(moodNft.tokenURI(0))) ==
-                keccak256(abi.encodePacked(HAPPY_MOOD_URI))
-        );
+        assert(keccak256(abi.encodePacked(moodNft.tokenURI(0))) == keccak256(abi.encodePacked(HAPPY_MOOD_URI)));
     }
 
     function testFlipTokenToSad() public {
@@ -62,10 +53,7 @@ contract MoodNftTest is Test {
         moodNft.flipMood(0);
         vm.stopPrank();
 
-        assert(
-            keccak256(abi.encodePacked(moodNft.tokenURI(0))) ==
-                keccak256(abi.encodePacked(SAD_MOOD_URI))
-        );
+        assert(keccak256(abi.encodePacked(moodNft.tokenURI(0))) == keccak256(abi.encodePacked(SAD_MOOD_URI)));
     }
 
     function testEventRecordsCorrectTokenIdOnMinting() public {
